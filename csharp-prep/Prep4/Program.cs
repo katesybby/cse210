@@ -1,4 +1,4 @@
-// NUMBER LIST: SUM, AVG, MAX
+// LISTS (NUMBER LIST: SUM, AVG, MAX)
 
 using System;
 using System.Collections.Generic;   //need this when using Lists

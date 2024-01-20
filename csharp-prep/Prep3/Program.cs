@@ -1,4 +1,4 @@
-// GUESS THE NUMBER GAME
+// LOOPS (GUESS THE NUMBER GAME)
 
 using System;
 

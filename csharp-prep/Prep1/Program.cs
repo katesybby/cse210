@@ -1,4 +1,4 @@
-// BOND, JAMES BOND
+// FIRST PROGRAM (BOND, JAMES BOND)
 
 using System;
 

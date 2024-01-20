@@ -1,3 +1,5 @@
+// FUNCTIONS (NAME + SQUARED #)
+
 using System;
 
 class Program
