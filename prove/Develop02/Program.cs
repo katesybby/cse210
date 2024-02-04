@@ -2,13 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography.X509Certificates;
-// using System.Linq;
 
 public class Program
 {
     static void Main(string[] args)
     {
         Console.WriteLine("\nWELCOME TO YOUR NEW JOURNAL!");
+        Console.Write("What's your name? ");  //EXTRA: added a prompt for the users name
+        string name = Console.ReadLine();
+
         Journal journal = new Journal();
         File file = new File();
         string userChoice = "1";
@@ -40,14 +42,14 @@ public class Program
                     break;
 
                 case "2": //DISPLAY
-                    Console.WriteLine("\n------- JOURNAL -------\n");
+                    Console.WriteLine($"\n---- {name.ToUpper()}'S JOURNAL ----\n");  //EXTRA: users name in all caps in title
 
                     foreach(Entry singleEntry in journal.GetEntries()) //chatGPT did this dif > foreach (var entry in journal.GetEntries())
                     {
                         Console.WriteLine($"Date: {singleEntry._entryDate}\nPrompt: {singleEntry._prompt}\nContent: {singleEntry._content}\n");
                     }
 
-                    Console.WriteLine("-------------------------\n");
+                    Console.WriteLine("--------------------------\n");
                     break;
 
                 case "3": //SAVE
@@ -72,5 +74,6 @@ public class Program
 
 
 //----------------------------------------------------------------------------
-//EXCEEDING CORE REQUIREMENTS:
-//created an extra class "File" to simplify main code
+//EXCEEDING CORE REQUIREMENTS (extra):
+//created an extra class named "File" and added methods "LoadFromFile()" and "SaveToFile()"
+//added a prompt for the users name and put it into the journals title 

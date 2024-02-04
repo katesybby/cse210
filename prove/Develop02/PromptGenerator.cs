@@ -11,7 +11,6 @@ public class PromptGenerator
         "What are your goals for tomorrow?"
    };
 
-
    public string GetRandomPrompt()
    {
        Random random = new Random();
@@ -19,7 +18,3 @@ public class PromptGenerator
        return _prompts[index];
     }
  }
-
-
-//----------------------------------------------------------------------------
-//ONLY DIF IS "prompts" -> "_prompts"

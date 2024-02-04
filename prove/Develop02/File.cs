@@ -1,18 +1,16 @@
 using System;
 
-public class File
+public class File  //EXTRA: File class including methods SaveToFile() and LoadFromFile()
 {
     public void SaveToFile() //saves to file
     {
         Console.Write("\nEnter filename (ex: journal.txt): ");
         string filenameSave = Console.ReadLine();
 
-        // entries.SaveToFile(filenameSave);
-
         Console.WriteLine($"Journal saved to {filenameSave}");
     }
 
-    public void LoadFromFile()  //loads from file
+    public void LoadFromFile()  //loads from file. something isn't working right though...
     {
         Console.Write("\nEnter filename (ex: journal.txt): ");
         string filenameLoad = Console.ReadLine();
@@ -32,7 +30,7 @@ public class File
 
 
 //----------------------------------------------------------------------------
-//previous attempt:
+//previous attempt (load):
         // Console.Write("\nEnter filename (ex: journal.txt): ");
         // string filenameLoad = Console.ReadLine();
 
