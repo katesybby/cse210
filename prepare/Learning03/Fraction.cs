@@ -53,7 +53,7 @@ public class Fraction
         // return text;
     }
 
-    public double GetDecimalValue()
+    public double GetDecimalValue()   //double: returning a decimal (up to 15 digits)
     {
         // return _top / _bottom;   //my solution
         return (double)_top / (double)_bottom;   //profs solution
