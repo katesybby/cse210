@@ -34,4 +34,3 @@ public class Scripture
         return renderedText.Trim();
     }
 }
-

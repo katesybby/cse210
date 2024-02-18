@@ -33,13 +33,3 @@ public class Reference
         }
     }
 }
-
-
-    // public string Text
-    // {
-    //     get
-    //     {
-    //         return $"{_book} {_chapter}:{_verseStart}-{_verseEnd}";
-    //     }
-    // }
-
