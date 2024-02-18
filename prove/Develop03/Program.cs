@@ -8,7 +8,7 @@ class Program
         Console.Clear();
         Console.WriteLine("\n---------------------------- WELCOME TO THE SCRIPTURE MEMORIZER! ------------------------------\n");
 
-        // Create a list of available scriptures
+        //create a list of available scriptures
         List<Scripture> scriptures = new List<Scripture>
         {
             CreateScripture("John", 3, 16, "For God so loved the world that he gave his only Son"),
@@ -16,21 +16,21 @@ class Program
             CreateScripture("Alma", 7, 11, "And he shall go forth, suffering pains and afflictions and temptations of every kind; and this that the word might be fulfilled which saith he will take upon him the pains and the sicknesses of his people.")
         };
 
-        // Display menu
+        //display menu
         Console.WriteLine("Choose a scripture to memorize:");
         for (int i = 0; i < scriptures.Count; i++)
         {
             Console.WriteLine($"{i + 1}. {scriptures[i].Reference.GetReferenceString()}");
         }
 
-        // Get user choice
+        //get user choice
         int userChoice;
         do
         {
             Console.Write("Enter the number of your choice (1-" + scriptures.Count + "): ");
         } while (!int.TryParse(Console.ReadLine(), out userChoice) || userChoice < 1 || userChoice > scriptures.Count);
 
-        // Initialize the selected scripture
+        //memorizing the selected scripture
         Scripture selectedScripture = scriptures[userChoice - 1];
 
         Console.Clear();
@@ -54,7 +54,8 @@ class Program
         Console.WriteLine("Program ended.");
     }
 
-    static Scripture CreateScripture(string book, int chapter, int verse, string text)
+    //creates new scripture object
+    static Scripture CreateScripture(string book, int chapter, int verse, string text)   
     {
         var words = new List<Word>();
         foreach (string word in text.Split(" "))
@@ -67,4 +68,3 @@ class Program
         return new Scripture(reference, words);
     }
 }
-
