@@ -18,17 +18,19 @@ class Program
 
         //display menu
         Console.WriteLine("Choose a scripture to memorize:");
-        for (int i = 0; i < scriptures.Count; i++)
-        {
-            Console.WriteLine($"{i + 1}. {scriptures[i].Reference.GetReferenceString()}");
-        }
+        // for (int i = 0; i < scriptures.Count; i++)
+        // {
+        //     Console.WriteLine($"{i + 1}. {scriptures[i].Reference.GetReferenceString()}");
+        // }
 
         //get user choice
         int userChoice;
         do
         {
-            Console.Write("Enter the number of your choice (1-" + scriptures.Count + "): ");
-        } while (!int.TryParse(Console.ReadLine(), out userChoice) || userChoice < 1 || userChoice > scriptures.Count);
+            // Console.Write("Enter the number of your choice (1-" + scriptures.Count + "): ");
+            Console.Write("Enter the number of your choice (1-3): ");
+        } while (!int.TryParse(Console.ReadLine(), out userChoice) || userChoice < 1 || userChoice > 3);
+        // while (!int.TryParse(Console.ReadLine(), out userChoice) || userChoice < 1 || userChoice > scriptures.Count);
 
         //memorizing the selected scripture
         Scripture selectedScripture = scriptures[userChoice - 1];
@@ -52,6 +54,7 @@ class Program
         } while (selectedScripture.Words.Exists(word => !word.IsHidden));
 
         Console.WriteLine("Program ended.");
+        Console.WriteLine("Goodbye!");
     }
 
     //creates new scripture object
