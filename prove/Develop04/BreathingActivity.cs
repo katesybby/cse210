@@ -5,7 +5,7 @@ public class BreathingActivity : Activity
     private int _in = 4;
     private int _out = 6;
 
-    public BreathingActivity() : base("BREATHING ACTIVITY", "Relax by breathing slowly") { }   //longer description
+    public BreathingActivity() : base("BREATHING ACTIVITY", "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.") { } 
 
     public override void Start()
     {

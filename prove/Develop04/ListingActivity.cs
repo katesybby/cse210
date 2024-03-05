@@ -11,7 +11,7 @@ public class ListingActivity : Activity
         "Who are some of your personal heroes?"
     };
 
-    public ListingActivity() : base("LISTING ACTIVITY", "List positive aspects of your life") { }   //longer description
+    public ListingActivity() : base("LISTING ACTIVITY", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.") { }
 
     public override void Start()
     {

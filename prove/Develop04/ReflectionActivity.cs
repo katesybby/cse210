@@ -21,7 +21,7 @@ public class ReflectionActivity : Activity
         "How can you keep this experience in mind in the future?"
     };
 
-    public ReflectionActivity() : base("REFLECTION ACTIVITY", "Reflect on times of strength and resilience") { }
+    public ReflectionActivity() : base("REFLECTION ACTIVITY", "This activity will help you reflect on times in your life when you have shown strength and resiliance. This will help you recognize the power you have and how you can use it in other aspects of your life.") { }
 
     public override void Start()
     {
