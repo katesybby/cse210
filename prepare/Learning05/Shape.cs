@@ -4,11 +4,13 @@ public abstract class Shape   //abstract class <== abstract method
 {
     // private string _color;   //member variable
 
-    public string Color { get; set; }   //getter + setter
+    public string _shape { get; set; }   //getter + setter
+    public string _color { get; set; }   
 
-    public Shape(string color)   //constructor
+    public Shape(string shape, string color)   //constructor
     {
-        Color = color;
+        _shape = shape;
+        _color = color;
     }
 
     public abstract double GetArea();   //abstract method

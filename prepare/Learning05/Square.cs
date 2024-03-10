@@ -3,7 +3,7 @@ using System;
 public class Square : Shape
 {
     private double _side;
-    public Square(string color, double side) : base(color)
+    public Square(string shape, string color, double side) : base(shape, color)
     {
         _side = side;
     }
