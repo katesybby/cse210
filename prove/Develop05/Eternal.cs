@@ -18,14 +18,15 @@ public class Eternal : Goal
     public override void ListGoal()
     {
         base.ListGoal();
+
         Console.Write($" - {_description}");
     }
 
-    public override void RecordEvent(ref int totalPoints)
+    public override void RecordEvent(ref int _totalPoints)
     {
-        // base.RecordEvent(ref totalPoints);
+        base.RecordEvent(ref _totalPoints);
         _completed = false;
         _status = "[ ]";   //incomplete
-        totalPoints += _points; 
+        _totalPoints += _points; 
     }
 }

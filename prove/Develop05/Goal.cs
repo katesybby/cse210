@@ -28,20 +28,16 @@ public class Goal
         Console.Write($"{_status} {_name} ({_points} pts)"); 
     }
     
-    public virtual void RecordEvent(ref int _totalPoints)
+    public virtual void RecordEvent(ref int _totalPoints)    //something wrong here
     {
-        _completed = false;
+        _completed = false;   //default settings
         _status = "[ ]";  
-        _totalPoints += _points;
-
-        Console.WriteLine($"Recording event for '{_name}'...");
+        _totalPoints += _points;   
 
         string eventDescription = Console.ReadLine();
 
         Entry entry = new Entry(eventDescription);
         _goals.Add(entry);
-
-        Console.WriteLine($"Event recorded successfully for '{_name}'!"); 
     }
 
     public virtual bool IsCompleted()

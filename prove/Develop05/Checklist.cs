@@ -31,7 +31,8 @@ public class Checklist : Goal
 
     public override void RecordEvent(ref int _totalPoints)
     {
-        //base.RecordEvent(ref totalPoints);
+        base.RecordEvent(ref _totalPoints);
+        
         if (_completedCount == _frequency)
         {
             _completed = true;

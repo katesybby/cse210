@@ -118,7 +118,7 @@ public class Program
             string _description = Console.ReadLine();
 
             Simple simpleGoal = new Simple(_name, _points, _description);
-            goals.Add(simpleGoal);
+            goals.Add(simpleGoal); 
             
             Console.WriteLine("\n-------------------------------");
             Console.WriteLine("\nSimple Goal created successfully.");
@@ -237,25 +237,25 @@ public class Program
                             _points = checklistGoal._points,
                             _description = checklistGoal._description,
                             _bonus = checklistGoal._bonus,
-                            _frequency = checklistGoal._frequency,
+                            _frequency = checklistGoal._frequency, 
                         };
                         userGoalDataList.Add(_userGoalData);
                     }
                 }
 
-                string json = JsonSerializer.Serialize(userGoalDataList);   //serialize user data
+                string json = JsonSerializer.Serialize(userGoalDataList);    //serialize user data
 
-                Console.WriteLine("\n-----------------------");
-                Console.WriteLine("\nGoals saved successfully!");
+                Console.WriteLine("\n-----------------------");      
+                Console.WriteLine("\nGoals saved successfully!");     
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error saving goals. Please try again. {ex.Message}");
+                Console.WriteLine($"Error saving goals. Please try again. {ex.Message}");     
             }
             
-            Console.Write("\n\nPress enter to return to Main Menu ");
-            Console.ReadLine();
-            Start();
+            Console.Write("\n\nPress enter to return to Main Menu ");      
+            Console.ReadLine();     
+            Start();    
         }
 
         public void LoadGoals() 
@@ -271,14 +271,14 @@ public class Program
                 {
                     string json = File.ReadAllText(filename);
                     goals = JsonSerializer.Deserialize<List<Goal>>(json);
-                    DisplayEntries();
+                    DisplayEntries();   //error occurs here..?
+
                     Console.WriteLine("\n-----------------------");
                     Console.WriteLine("\nGoals loaded successfully!"); 
                 }
                 else
                 {
-                    Console.WriteLine("\nNo saved goals found.");
-                    //loop back to the beginning of the method
+                    Console.WriteLine("\nNo saved goals found.");   //add aloop back to the beginning of the method
                 }
             }
             catch (Exception ex)
@@ -291,16 +291,16 @@ public class Program
             Start();
         }
     
-        public void RecordEvent()
+        public void RecordEvent()    //ERROR: maybe try deconstructing and starting over. or try erasing Goal.cs ver of RecordEvent
         {
             Console.Clear();
-            Console.WriteLine("------ EVENT RECORDING ------\n");
-            ListGoals();
-            Console.Write("\nEnter the number of the goal you accomplished: ");   
+            Console.WriteLine("------ EVENT RECORDING ------\n");      
+            ListGoals();    //only run line of code...
+            Console.Write("\nEnter the number of the goal you accomplished: ");    
 
             int index = GetUserInputAsInt();
-            if (index >= 1 && index <= goals.Count)
-            {
+            if (index >= 1 && index <= goals.Count)    //add more in here? 
+            { 
                 Goal selectedGoal = goals[index - 1];
                 selectedGoal.RecordEvent(ref _totalPoints);
                 Console.WriteLine($"Event recorded successfully! You earned {_totalPoints} pts.");

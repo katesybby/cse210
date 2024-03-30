@@ -12,14 +12,14 @@ public class Simple : Goal
         _completedCount = 0;
     }
 
-    public override void RecordEvent(ref int totalPoints)
+    public override void RecordEvent(ref int _totalPoints)
     {
-        // base.RecordEvent(ref totalPoints);
+        base.RecordEvent(ref _totalPoints);
         _completedCount++;
         if (_completedCount >= _points)
         {
             _completed = true;
-            // totalPoints += _points; 
+            _totalPoints += _points; 
             _status = "[X]";   //this means completed
         }
     }
