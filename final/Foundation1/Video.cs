@@ -1,7 +1,7 @@
 using System;
 
 public class Video
-{
+{ 
     private string _title;
     private string _author;
     private double _length;
@@ -19,19 +19,20 @@ public class Video
         return _comments.Count;
     }
 
-    public void ListComment(Comment comment)
+    public void AddComment(Comment comment)
     {
         _comments.Add(comment);
     }
 
     public void DisplayInfo()
     {
-        Console.WriteLine($"Title: {_title} | Author: {_author} | Length: {_length} seconds");
-        Console.WriteLine($"Comment Count: {CountComments()}");
+        Console.WriteLine($"\n\x1b[1m{_title}\x1b[0m | \x1b[1m{_author}\x1b[0m | {_length} minutes\n");   //\x1b[1m = bold (this took so much effort to figure out for absolutely no reason)
+        // Console.WriteLine($"Comment Count: {CountComments()}");
+        Console.WriteLine($"-------------------- COMMENTS ({CountComments()}) -------------------\n");
         foreach (Comment comment in _comments)
         {
             comment.DisplayInfo();
         }
+        Console.WriteLine("\n-----------------------------------------------------");
     } 
-
 }
