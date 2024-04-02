@@ -11,18 +11,9 @@ public class Customer
         _address = address;
     }
 
-    public string GetName()
-    {
-        return _name;
-    }
+    public string GetName() => _name;
 
-    public bool IsUSA()  
-    {
-        return _address.IsInUSA() ? true : false;   //shortcut for T / F
-    }
+    public bool IsUSA() => _address.IsInUSA() ? true : false;   //shortcut for T / F
 
-    public string GetFullAddress()
-    {
-        return _address.GetFullAddress();
-    }
+    public string GetFullAddress() => _address.GetFullAddress();
 }

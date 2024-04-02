@@ -15,28 +15,13 @@ public class Product
         _quantity = quantity;
     }
 
-    public string GetName()
-    {
-        return _name;
-    }
+    public string GetName() => _name;
 
-    public int GetProductId()
-    {
-        return _productId;
-    }
+    public int GetProductId() => _productId;
 
-    public double GetPrice()
-    {
-        return _price;
-    }
+    public double GetPrice() => _price;
 
-    public int GetQuantity()
-    {
-        return _quantity;
-    }
+    public int GetQuantity() => _quantity;
 
-    public double CalculatePrice()
-    {
-        return _price * _quantity;
-    }
+    public double CalculatePrice() => _price * _quantity;
 }

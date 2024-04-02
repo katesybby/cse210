@@ -1,5 +1,4 @@
 using System;
-using System.Diagnostics.Contracts;
 
 public class Order
 {
@@ -34,11 +33,11 @@ public class Order
 
     public string GeneratePackingLabel()
     {
-        string packingLabel = "Packing Label:\n";
+        string packingLabel = "\n\x1b[1mPACKING LABEL:\x1b[0m\n";   //\x1b[1mTEXT\x1b[0m
 
         foreach (Product product in _products)
         {
-            packingLabel += product.GetName() + " - " + product.GetProductId() + "\n";
+            packingLabel += $"{product.GetName(), -25} ({product.GetProductId()})\n";   //'-25' = basically tab
         }
 
         return packingLabel;
@@ -46,36 +45,36 @@ public class Order
 
     public string GenerateShippingLabel()
     {
-        string shippingLabel = "Shipping Label:\n";
-        shippingLabel += _customer.GetName() + "\n" + _customer.GetFullAddress();
+        string shippingLabel = "\n\x1b[1mSHIPPING LABEL:\x1b[0m\n";
+
+        shippingLabel += _customer.GetName() + "\n" + _customer.GetFullAddress() + "\n";
 
         return shippingLabel;
     }
 
     public string GenerateTotalCost()
     {
-        string totalCost = "\nProducts\n";
-        double totalPrice = CalculateTotalPrice();
+        string totalCost = "\n\x1b[1mPRODUCTS:\x1b[0m\n";
 
         foreach (Product product in _products)
         {
-            totalCost += product.GetName() + product.GetProductId() + product.GetPrice() + product.GetQuantity() + product.CalculatePrice() + "\n";
+            totalCost += $"{product.GetName()}: ${product.GetPrice()}, x{product.GetQuantity()} = ${product.CalculatePrice()}\n";
         }
 
-        totalCost += "Shipping Cost: $" + CalculateShipping() + "\n";
-        totalCost += "Total Cost: $" + CalculateTotalPrice();
+        totalCost += "\n\x1b[1mShipping Cost:\x1b[0m $" + CalculateShipping() + "\n";
+        totalCost += "\x1b[1mTotal Cost:\x1b[0m $" + CalculateTotalPrice();
 
         return totalCost;
     }
 
     public void DisplayResults()
     {
-        string packingLabel = GeneratePackingLabel();
         string shippingLabel = GenerateShippingLabel();
+        string packingLabel = GeneratePackingLabel();
         string totalCost = GenerateTotalCost();
 
-        Console.WriteLine(packingLabel);
         Console.WriteLine(shippingLabel);
+        Console.WriteLine(packingLabel);
         Console.WriteLine(totalCost);
     }
 }

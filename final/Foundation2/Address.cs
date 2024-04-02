@@ -27,8 +27,5 @@ public class Address
         }
     } 
 
-    public string GetFullAddress()
-    {
-        return $"{_street}, {_city}\n{_state}, {_country}";
-    }
+    public string GetFullAddress() => $"{_street}, {_city}\n{_state}, {_country}";   //shortened version of return "___"
 }
