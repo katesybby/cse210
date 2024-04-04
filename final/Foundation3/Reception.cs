@@ -16,11 +16,11 @@ public class Reception : Event
 
     public string GetReceptionDetails()
     {
-        return $"{GetStandardDetails()}\nRSVP: {_email}\n";
+        return $"{GetStandardDetails()}\n\x1b[1mRSVP\x1b[0m @ {_email}\n";
     }
 
     public string GetReceptionShort()
     {
-        return $"Event Type: {ReturnEventType()}\n{GetShortDetails()}\n";
+        return $"\x1b[1mEvent Type:\x1b[0m {ReturnEventType()}\n{GetShortDetails()}\n";   
     }
 }

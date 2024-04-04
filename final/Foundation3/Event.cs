@@ -17,13 +17,13 @@ public class Event
         _address = address;
     }
 
-    public string GetStandardDetails()
+    public string GetStandardDetails()    //\x1b[1mTEXT\x1b[0m => how to bold text
     {
-        return $"Title: {_title}\nDescription: {_description}\nDate/Time: {_date} | {_time}\n{_address.GetFullAddress()}\n";
+        return $"\x1b[1mTitle:\x1b[0m {_title}\n\x1b[1mDescription:\x1b[0m {_description}\n\x1b[1mDate/Time:\x1b[0m {_date} | {_time}\n\x1b[1mLocation:\x1b[0m {_address.GetFullAddress()}\n";
     }
 
     public string GetShortDetails()
     {
-        return $"Title: {_title}\nDate: {_date}\n";
+        return $"\x1b[1mTitle:\x1b[0m {_title}\n\x1b[1mDate:\x1b[0m {_date}\n";   
     }
 }

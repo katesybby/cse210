@@ -18,11 +18,11 @@ public class Lecture : Event
 
     public string GetLectureDetails()
     {
-        return $"{GetStandardDetails()}\nSpeaker: {_speaker}\nCapacity: {_capacity}max\n";
+        return $"{GetStandardDetails()}\n\x1b[1mSpeaker:\x1b[0m {_speaker}\n\x1b[1mCapacity:\x1b[0m {_capacity} max\n";
     }
 
     public string GetLectureShort()
     {
-        return $"Event Type: {ReturnEventType()}\n{GetShortDetails()}\n";
+        return $"\x1b[1mEvent Type:\x1b[0m {ReturnEventType()}\n{GetShortDetails()}\n";  
     }
 }

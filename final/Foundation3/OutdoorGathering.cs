@@ -9,11 +9,6 @@ public class OutdoorGathering : Event
         _weather = weather;
     }
 
-    public string GetWeather()
-    {
-        return $"The weather will be: {_weather}.\n";
-    }
-
     public string ReturnEventType()
     {
         return "Outdoor Gathering";
@@ -21,11 +16,11 @@ public class OutdoorGathering : Event
 
     public string GetOutdoorGatheringDetails()
     {
-        return $"{GetStandardDetails()}\nStatement of the Weather: {GetWeather()}\n";
+        return $"{GetStandardDetails()}\n\x1b[1mWeather Forecast:\x1b[0m {_weather}\n";
     }
 
     public string GetOutdoorGatheringShort()
     {
-        return $"Event Type: {ReturnEventType()}\n{GetShortDetails()}\n";
+        return $"\x1b[1mEvent Type:\x1b[0m {ReturnEventType()}\n{GetShortDetails()}\n";  
     }
 }
