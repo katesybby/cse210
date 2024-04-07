@@ -6,13 +6,13 @@ public class StationaryBike : Activity
 
     public StationaryBike(string date, int minutes, double speed) : base(date, minutes)
     {
-        _name = "Stationary Bike";
+        _name = "STATIONARY BIKE";
         _speed = speed;
     }
 
-    public override double GetDistance() => (_speed * _minutes) / 60;
-
-    public override double GetSpeed() => _speed;
-
-    public override double GetPace() => 60 / _speed;
+    public override double GetDistance() => _speed * _minutes / 60;
+    public double GetSpeedKph() => _speed;
+    public double GetSpeedMph() => GetSpeedKph() * 0.621371;
+    public double GetPaceMinPerKm() => 60 / _speed * 1000;
+    public double GetPaceMinPerMile() => GetPaceMinPerKm() / 1.60934;
 }

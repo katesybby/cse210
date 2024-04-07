@@ -12,12 +12,11 @@ public class Activity
         _minutes = minutes;
     }
 
-    public virtual double GetDistance() => 0;   //shortcut for return 0;
+    public virtual double GetDistance() => 0;   //shortcut for 'return 0';
 
     public virtual double GetSpeed() => 0;
 
     public virtual double GetPace() => 0;
 
-    public string GetSummary() => $"{_date} {_name} ({_minutes}min)- Distance: {GetDistance()} miles, Speed: {GetSpeed()} mph, Pace: {GetPace()} min per mile";
-    
+    public virtual string GetSummary() => $"\x1b[1mDate/Time:\x1b[0m {_date} ~ {_minutes} min \n\x1b[1mDistance:\x1b[0m {GetDistance()} miles\n";
 }

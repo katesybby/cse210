@@ -6,13 +6,13 @@ public class Running : Activity
 
     public Running(string date, int minutes, double distance) : base(date, minutes)
     {
-        _name = "Running";
+        _name = "RUNNING";
         _distance = distance;
     }
 
     public override double GetDistance() => _distance;
-
-    public override double GetSpeed() => (_distance / _minutes) * 60;
-
-    public override double GetPace() => _minutes / (_distance / 60);
+    public double GetSpeedKph() => _distance / _minutes * 60;   
+    public double GetSpeedMph() => GetSpeedKph() * 0.621371;   
+    public double GetPaceMinPerKm() => _minutes / (GetDistance() / 1000);   
+    public double GetPaceMinPerMile() => GetPaceMinPerKm() / 1.60934;   
 }
