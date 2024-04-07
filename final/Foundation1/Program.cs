@@ -11,7 +11,7 @@ class Program
         string _username = Console.ReadLine();
 
         Console.Clear();
-        Console.WriteLine($"\nWelcome {_username}!\n");
+        Console.WriteLine($"\nWelcome @{_username}!\n");
 
 
         List<Video> videosList = new List<Video>();
@@ -23,18 +23,18 @@ class Program
 
 
         //COMMENTS -----------------------------------------------------
-        video1.AddComment(new Comment("CatLover123", "These cats are adorable!"));
-        video1.AddComment(new Comment("CrazyCat", "Felines rock!"));
-        video1.AddComment(new Comment("I<3Cats", "ME-WOW! I wish I had more cats!"));
+        video1.AddComment(new Comment("@CatLover123", "These cats are adorable!"));
+        video1.AddComment(new Comment("@CrazyCat", "Felines rock!"));
+        video1.AddComment(new Comment("@I<3Cats", "ME-WOW! I wish I had more cats!"));
 
-        video2.AddComment(new Comment("DogWhisperer", "Great tips! Thanks for sharing"));
-        video2.AddComment(new Comment("PuppyLove22", "My dog learned so much from these videos"));
-        video2.AddComment(new Comment("CanineCompanion", "I'll try these with my new puppy!"));
-        video2.AddComment(new Comment("2DogLuvezr", "WOOF WOOF WOOF BARK WOOF"));
+        video2.AddComment(new Comment("@DogWhisperer", "Great tips! Thanks for sharing"));
+        video2.AddComment(new Comment("@PuppyLove22", "My dog learned so much from these videos"));
+        video2.AddComment(new Comment("@CanineCompanion", "I'll try these with my new puppy!"));
+        video2.AddComment(new Comment("@2DogLuvezr", "WOOF WOOF WOOF BARK WOOF"));
 
-        video3.AddComment(new Comment("BirdWatcher99", "These birds are stunning!!"));
-        video3.AddComment(new Comment("FeatherFanatic", "I love seeing them in their natural habitat."));
-        video3.AddComment(new Comment("AnimalAdmirer", "I like cats more."));
+        video3.AddComment(new Comment("@BirdWatcher99", "These birds are stunning!!"));
+        video3.AddComment(new Comment("@FeatherFanatic", "I love seeing them in their natural habitat."));
+        video3.AddComment(new Comment("@AnimalAdmirer", "I like cats more."));
 
 
         videosList.Add(video1);
@@ -70,7 +70,7 @@ class Program
                 Console.Write("Write your comment for this video: ");
                 string userComment = Console.ReadLine();
 
-                chosenVideo.AddComment(new Comment(_username, userComment));
+                chosenVideo.AddComment(new Comment("@" + _username, userComment));
 
                 Console.WriteLine("Comment added successfully!");
             }
@@ -92,7 +92,7 @@ class Program
             {
                 Console.Clear();
                 DisplayVideos(videosList);
-                Console.WriteLine("\nThank you for using YouTube!");
+                Console.WriteLine($"\nThank you for using YouTube @{_username}!");
                 Console.WriteLine("Goodbye!");
                 break;
             }
@@ -104,3 +104,9 @@ class Program
         }
     }
 }
+
+//---------------------------------------------------------------------------------------------------
+//Exceeding Requirements:
+//1. Prompting for username from user + welcome message
+//2. Option for user to add multiple comments to video of their choosing. This includes the ability to see their comments.
+//3. Gorgeous output formatting!
