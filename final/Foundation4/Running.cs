@@ -11,8 +11,8 @@ public class Running : Activity
     }
 
     public override double GetDistance() => _distance;
-    public double GetSpeedKph() => _distance / _minutes * 60;   
-    public double GetSpeedMph() => GetSpeedKph() * 0.621371;   
-    public double GetPaceMinPerKm() => _minutes / (GetDistance() / 1000);   
-    public double GetPaceMinPerMile() => GetPaceMinPerKm() / 1.60934;   
+    public override double GetSpeedKph() => _distance / _minutes * 60;   
+    public override double GetSpeedMph() => GetSpeedKph() * 0.621371;   
+    public override double GetPaceMinPerKm() => _minutes / (GetDistance() / 1000);   
+    public override double GetPaceMinPerMile() => GetPaceMinPerKm() / 1.60934;   
 }

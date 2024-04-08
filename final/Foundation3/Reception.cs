@@ -14,12 +14,12 @@ public class Reception : Event
         return "Reception";
     }
 
-    public string GetReceptionDetails()
+    public override string GetStandardDetails()
     {
         return $"{GetStandardDetails()}\n\x1b[1mRSVP\x1b[0m @ {_email}\n";
     }
 
-    public string GetReceptionShort()
+    public override string GetShortDetails()
     {
         return $"\x1b[1mEvent Type:\x1b[0m {ReturnEventType()}\n{GetShortDetails()}\n";   
     }

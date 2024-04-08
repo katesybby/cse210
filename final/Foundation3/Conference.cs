@@ -14,12 +14,12 @@ public class Conference : Event
         return "Conference";
     }
 
-    public string GetConferenceDetails()
+    public override string GetStandardDetails()
     {
         return $"{GetStandardDetails()}\n\x1b[1mKeynote Speaker:\x1b[0m {_keynoteSpeaker}\n";
     }
 
-    public string GetConferenceShort()
+    public override string GetShortDetails()
     {
         return $"\x1b[1mEvent Type:\x1b[0m {ReturnEventType()}\n{GetShortDetails()}\n"; 
     }

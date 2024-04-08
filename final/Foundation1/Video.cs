@@ -26,8 +26,7 @@ public class Video
 
     public void DisplayInfo()
     {
-        Console.WriteLine($"\n\x1b[1m{_title}\x1b[0m | \x1b[1m{_author}\x1b[0m | {_length} minutes\n");   //\x1b[1m = bold (this took so much effort to figure out for absolutely no reason)
-        // Console.WriteLine($"Comment Count: {CountComments()}");
+        Console.WriteLine($"\n\x1b[1m{_title}\x1b[0m | \x1b[1m{_author}\x1b[0m | {_length} minutes\n");   //\x1b[1mTEXT\x1b[0m = bold (this took so much effort to figure out for absolutely no reason)
         Console.WriteLine($"-------------------- COMMENTS ({CountComments()}) -------------------\n");
         foreach (Comment comment in _comments)
         {

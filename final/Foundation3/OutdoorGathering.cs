@@ -14,12 +14,12 @@ public class OutdoorGathering : Event
         return "Outdoor Gathering";
     }
 
-    public string GetOutdoorGatheringDetails()
+    public override string GetStandardDetails()
     {
         return $"{GetStandardDetails()}\n\x1b[1mWeather Forecast:\x1b[0m {_weather}\n";
     }
 
-    public string GetOutdoorGatheringShort()
+    public override string GetShortDetails()
     {
         return $"\x1b[1mEvent Type:\x1b[0m {ReturnEventType()}\n{GetShortDetails()}\n";  
     }

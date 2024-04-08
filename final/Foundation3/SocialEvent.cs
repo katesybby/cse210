@@ -11,12 +11,12 @@ public class SocialEvent : Event
         return "Social Event";
     }
 
-    public string GetSocialEventDetails()
+    public override string GetStandardDetails()
     {
         return $"{GetStandardDetails()}";
     }
 
-    public string GetSocialEventShort()
+    public override string GetShortDetails()
     {
         return $"\x1b[1mEvent Type:\x1b[0m {ReturnEventType()}\n{GetShortDetails()}\n"; 
     }
